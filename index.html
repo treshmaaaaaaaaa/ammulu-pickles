@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ammulu Pickles — Authentic South Indian Non-Veg Pickles</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --chili:#B33A3A;
+      --turmeric:#FFC043;
+      --leaf:#2B8A3E;
+      --parchment:#FAF4EC;
+    }
+    body{ font-family: Inter, sans-serif; background: linear-gradient(180deg, #FFF8F2 0%, #FAF4EC 100%); }
+
+    /* subtle spice tiled background using svg data-url (light) */
+    .spice-pattern {
+      background-image: radial-gradient(rgba(0,0,0,0.02) 1px, transparent 1px);
+      background-size: 18px 18px;
+    }
+
+    /* GENIE button (round) */
+    .genie-btn {
+      width:64px; height:64px; display:flex; align-items:center; justify-content:center;
+      border-radius:50%;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+      background: linear-gradient(135deg, #ffd58a, #ff9f43);
+      cursor:pointer;
+      transform-origin:center;
+    }
+
+    /* drool animation for genie */
+    .drool { 
+      transform-origin: top left;
+      animation: drool 1.2s infinite ease-in-out;
+      opacity:0.95;
+    }
+    @keyframes drool {
+      0% { transform: translateY(0) scale(1); opacity:1; }
+      50% { transform: translateY(4px) scale(0.98); opacity:0.75; }
+      100% { transform: translateY(0) scale(1); opacity:1; }
+    }
+
+    /* little click sparkle */
+    .sparkle { animation: sparkle 1.6s infinite; }
+    @keyframes sparkle {
+      0% { transform: scale(1); opacity: 0.9; }
+      50% { transform: scale(1.08); opacity: 0.5; }
+      100% { transform: scale(1); opacity: 0.9; }
+    }
+
+    /* small product hover lift */
+    .card-hover:hover { transform: translateY(-6px) scale(1.01); transition: .25s ease; }
+
+    /* product image gradient overlay */
+    .img-overlay { background: linear-gradient(0deg, rgba(0,0,0,0.28), transparent); }
+  </style>
+</head>
+<body class="text-gray-800">
+
+  <!-- NAV -->
+  <header class="bg-white sticky top-0 z-40 shadow-md">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <div class="rounded-full w-12 h-12 flex items-center justify-center bg-gradient-to-br from-red-500 to-red-700 text-white shadow">
+          <span class="text-lg font-bold">A</span>
+        </div>
+        <div>
+          <h1 class="font-playfair text-2xl md:text-3xl font-semibold text-[var(--chili)]">Ammulu Pickles</h1>
+          <div class="text-xs text-gray-500 -mt-1">Authentic Non-Veg Pickles • Andhra • Telangana • Karnataka • Kerala</div>
+        </div>
+      </div>
+
+      <nav class="hidden md:flex items-center gap-4">
+        <a href="#categories" class="text-sm font-medium hover:underline">Categories</a>
+        <a href="#products" class="text-sm font-medium hover:underline">Pickles</a>
+        <a href="#gallery" class="text-sm font-medium hover:underline">Gallery</a>
+        <a href="#about" class="text-sm font-medium hover:underline">About</a>
+        <a href="#contact" class="text-sm font-medium hover:underline">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="hidden sm:inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg shadow">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="white" viewBox="0 0 24 24"><path d="M20.5 3.5..."/></svg>
+          Order on WhatsApp
+        </a>
+        <!-- mobile hamburger placeholder -->
+        <button class="md:hidden p-2 bg-gray-100 rounded-lg">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="spice-pattern">
+    <div class="max-w-6xl mx-auto px-4 py-12 lg:py-20 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+      <div>
+        <h2 class="text-4xl md:text-5xl font-bold leading-tight text-[var(--chili)]">Taste the South — 20 hand-made <span class="text-[var(--turmeric)]">non-veg</span> pickles</h2>
+        <p class="mt-4 text-gray-700 max-w-xl">From coastal prawns of Andhra to the spicy home-style pickles of Telangana, and tangy Kerala classics — each jar is made with fresh ingredients and traditional recipes.</p>
+
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="#products" class="inline-flex items-center gap-2 bg-[var(--chili)] hover:bg-red-800 text-white px-5 py-3 rounded-xl shadow">
+            Shop Pickles
+          </a>
+          <a href="#gallery" class="inline-flex items-center gap-2 border border-[var(--turmeric)] text-[var(--chili)] px-5 py-3 rounded-xl">
+            See Gallery
+          </a>
+        </div>
+
+        <!-- small features -->
+        <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-4 max-w-md">
+          <div class="bg-white p-3 rounded-lg shadow-sm flex items-center gap-3">
+            <img src="https://img.icons8.com/ios-filled/50/000000/clock.png" class="w-6 h-6 opacity-70"/>
+            <div class="text-sm">Fast replies on WhatsApp</div>
+          </div>
+          <div class="bg-white p-3 rounded-lg shadow-sm flex items-center gap-3">
+            <img src="https://img.icons8.com/ios-filled/50/000000/leaf.png" class="w-6 h-6 opacity-70"/>
+            <div class="text-sm">Made fresh daily</div>
+          </div>
+          <div class="bg-white p-3 rounded-lg shadow-sm flex items-center gap-3">
+            <img src="https://img.icons8.com/ios-filled/50/000000/star--v1.png" class="w-6 h-6 opacity-70"/>
+            <div class="text-sm">Kitchen tested recipes</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative">
+        <!-- layered multiple background cards for richness -->
+        <div class="absolute -left-6 -top-6 w-60 h-60 rounded-2xl bg-[var(--turmeric)] opacity-15 blur-2xl"></div>
+        <div class="absolute -right-6 -bottom-6 w-72 h-72 rounded-2xl bg-[var(--leaf)] opacity-10 blur-2xl"></div>
+
+        <div class="rounded-3xl overflow-hidden shadow-2xl">
+          <img src="https://images.unsplash.com/photo-1604908177522-0bf2a4b6bbf8?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=3bf9b66a7b8c7abf1b2f0d1c2b6f3d72" alt="pickles hero" class="w-full h-96 object-cover img-overlay">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section id="categories" class="py-10 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <h3 class="text-2xl font-semibold text-[var(--chili)] mb-6">Explore by Region</h3>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="p-6 bg-red-50 rounded-2xl shadow hover:scale-105 transition cursor-pointer text-center">
+          <div class="text-lg font-semibold text-[var(--chili)]">Andhra</div>
+          <div class="mt-2 text-sm text-gray-600">Coastal prawn & fish pickles</div>
+        </div>
+        <div class="p-6 bg-yellow-50 rounded-2xl shadow hover:scale-105 transition cursor-pointer text-center">
+          <div class="text-lg font-semibold text-[var(--turmeric)]">Telangana</div>
+          <div class="mt-2 text-sm text-gray-600">Gongura & fiery mixes</div>
+        </div>
+        <div class="p-6 bg-green-50 rounded-2xl shadow hover:scale-105 transition cursor-pointer text-center">
+          <div class="text-lg font-semibold text-[var(--leaf)]">Karnataka</div>
+          <div class="mt-2 text-sm text-gray-600">Coastal & Malnad styles</div>
+        </div>
+        <div class="p-6 bg-blue-50 rounded-2xl shadow hover:scale-105 transition cursor-pointer text-center">
+          <div class="text-lg font-semibold text-blue-600">Kerala</div>
+          <div class="mt-2 text-sm text-gray-600">Banana leaf & coconut accents</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS GRID (20 items) -->
+  <section id="products" class="py-12 bg-[var(--parchment)]">
+    <div class="max-w-6xl mx-auto px-4">
+      <h3 class="text-2xl font-semibold text-[var(--chili)] mb-6">Our 20 Non-Veg Pickles</h3>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <!-- I'll include 20 cards. Replace image URLs with your photos if you have them -->
+        
+        <!-- 1 -->
+        <article class="bg-white rounded-2xl shadow card-hover overflow-hidden">
+          <div class="h-44">
+            <img src="https://images.unsplash.com/photo-1604908177522-0bf2a4b6bbf8?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=3bf9b66a7b8c7abf1b2f0d1c2b6f3d72" alt="Royyala (Prawn) Pickle" class="w-full h-full object-cover">
+          </div>
+          <div class="p-4 text-center">
+            <h4 class="font-semibold text-lg text-[var(--chili)]">Andhra Royyala Pickle (Prawn)</h4>
+            <p class="text-sm text-gray-600 mt-1">Coastal spice, tangy & hot</p>
+            <div class="mt-3 flex items-center justify-center gap-2">
+              <span class="text-sm px-2 py-1 rounded-full bg-red-100 text-red-700">Spice: 🔥🔥🔥</span>
+              <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Ammulu%20Pickles%21%20I%20want%20to%20order%20Andhra%20Royyala%20Pickle%20(300g)" target="_blank" class="ml-2 bg-green-600 px-4 py-2 rounded-lg text-white text-sm">Order</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2 -->
+        <article class="bg-white rounded-2xl shadow card-hover overflow-hidden">
+          <div class="h-44">
+            <img src="https://images.unsplash.com/photo-1605475123315-f0b3fa14f0a3?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=820d3f6e0f1fa2b1c0c7b6c8df0e5bd7" alt="Chepala (Fish) Pickle" class="w-full h-full object-cover">
+          </div>
+          <div class="p-4 text-center">
+            <h4 class="font-semibold text-lg text-[var(--chili)]">Chepala Pickle (Fish)</h4>
+            <p class="text-sm text-gray-600 mt-1">Tangy fish pickle, Andhra style</p>
+            <div class="mt-3">
+              <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Ammulu%20Pickles%21%20I%20want%20to%20order%20Chepala%20Pickle%20(300g)" target="_blank" class="bg-green-600 px-4 py-2 rounded-lg text-white text-sm">Order</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3 -->
+        <article class="bg-white rounded-2xl shadow card-hover overflow-hidden">
+          <div class="h-44">
+            <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=8d2a6f8a5e4b3a1c9f9a7b0d7a3e2f9c" alt="Chicken Pickle" class="w-full h-full object-cover">
+          </div>
+          <div class="p-4 text-center">
+            <h4 class="font-semibold text-lg text-[var(--chili)]">Chicken Pickle (Andhra)</h4>
+            <p class="text-sm text-gray-600 mt-1">Bold, spicy & tangy</p>
+            <div class="mt-3">
+              <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Ammulu%20Pickles%21%20I%20want%20to%20order%20Chicken%20Pickle%20(300g)" target="_blank" class="bg-green-600 px-4 py-2 rounded-lg text-white text-sm">Order</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4 -->
+        <article class="bg-white rounded-2xl shadow card-hover overflow-hidden">
+          <div class="h-44">
+            <img src="https://images.unsplash.com/photo-1588167102429-3190a9b0f0f5?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=be3f6c7f0f0a2b5d6e9c4a7b9a3f8d2e" alt="Gongura Mutton Pickle" class="w-full h-full object-cover">
+          </div>
+          <div class="p-4 text-center">
+            <h4 class="font-semibold text-lg text-[var(--chili)]">Gongura Mutton Pickle (Andhra/Telangana)</h4>
+            <p class="text-sm text-gray-600 mt-1">Tangy gongura punch</p>
+            <div class="mt-3">
+              <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Ammulu%20Pickles%21%20I%20want%20to%20order%20Gongura%20Mutton%20Pickle%20(300g)" target="_blank" class="bg-green-600 px-4 py-2 rounded-lg text-white text-sm">Order</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5 -->
+        <article class="bg-white rounded-2xl shadow card-hover overflow-hidden">
+          <div class="h-44">
+            <img src="https://images.unsplash.com/photo-1562158070-3f1b1f8a1f8c?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=e8f5f6a4d7b4c3a2b1f0e6c9a7b5c3d2" alt="Crab Pickle" class="w-full h-full object-cover">
+          </div>
+          <div class="p-4 text-center">
+            <h4 class="font-semibold text-lg text-[var(--chili)]">Crab Pickle (Coastal)</h4>
+            <p class="text-sm text-gray-600 mt-1">Very savory & aromatic</p>
+            <div class="mt-3">
+              <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Ammulu%20Pickles%21%20I%20want%20to%20order%20Crab%20Pickle%20(300g)" target="_blank" class="bg-green-600 px-4 py-2 rounded-lg text-white text-sm">Order</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6 -->
+        <article class="bg-white rounded-2xl shadow card-hover overflow-hidden">
+          <div class="h-44">
+            <img src="https://images.unsplash.com/photo-1542353433-8d4509e9b7c9?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=3a1b7e5a6c9e3d4f2a1b0c8d9e7f3a5b" alt="Telangana Prawn Gongura" class="w-full h-full object-cover">
+          </div>
+          <div class="p-4 text-center">
+            <h4 class="font-semibold text-lg text-[var(--chili)]">Telangana Prawn Gongura</h4>
+            <p class="text-sm text-gray-600 mt-1">Leafy tang & spice</p>
+            <div class="mt-3">
+              <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Ammulu%20Pickles%21%20I%20want%20to%20order%20Telangana%20Prawn%20Gongura%20(300g)" target="_blank" class="bg-green-600 px-4 py-2 rounded-lg text-white text-sm">Order</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 7 -->
+        <article class="bg-white rounded-2xl shadow card-hover overflow-hidden">
+          <div class="h-44">
+            <img src="https://images.unsplash.com/photo-1598370432227-6f8f3d4d9f8a?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=3d6e7f1a2b4c5d6e7f8a9b0c1d2e3f4a" alt="Telangana Chicken Spicy" class="w-full h-full object-cover">
+          </div>
+          <div class="p-4 text-center">
+            <h4 class="font-semibold text-lg text-[var(--chili)]">Telangana Chicken Spicy</h4>
+            <p class="text-sm text-gray-600 mt-1">Smoky & fiery</p>
+            <div class="mt-3">
+              <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Ammulu%20Pickles%21%20I%20want%20to%20order%20Telangana%20Chicken%20Spicy%20(300g)" target="_blank" class="bg-green-600 px-4 py-2 rounded-lg text-white text-sm">Order</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 8 -->
+        <article class="bg-white rounded-2xl shadow card-hover overflow-hidden">
+          <div class="h-44">
+            <img src="https://images.unsplash.com/photo-1572441710262-5a7dcbf6c4a8?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=6a4b7c8d9e0f1a2b3c4d5e6f7a8b9c0d" alt="Telangana Mutton Pickle" class="w-full h-full object-cover">
+          </div>
+          <div class="p-4 text-center">
+            <h4 class="font-semibold text-lg text-[var(--chili)]">Telangana Mutton Pickle</h4>
+            <p class="text-sm text-gray-600 mt-1">Hearty & rich</p>
+            <div class="mt-3">
+              <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Ammulu%20Pickles%21%20I%20want%20to%20order%20Telangana%20Mutton%20Pickle%20(300g)" target="_blank" class="bg-green-600 px-4 py-2 rounded-lg text-white text-sm">Order</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 9 -->
+        <article class="bg-white rounded-2xl shadow card-hover overflow-hidden">
+          <div class="h-44">
+            <img src="https://images.unsplash.com/photo-1588167102429-3190a9b0f0f5?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=be3f6c7f0f0a2b5d6e9c4a7b9a3f8d2e" alt="Dry Fish Pickle" class="w-full h-full object-cover">
+          </div>
+          <div class="p-4 text-center">
+            <h4 class="font-semibold text-lg text-[var(--chili)]">Dry Fish Pickle</h4>
+            <p class="text-sm text-gray-600 mt-1">Umami packed</p>
+            <div class="mt-3">
+              <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Ammulu%20Pickles%21%20I%20want%20to%20order%20Dry%20Fish%20Pickle%20(300g)" target="_blank" class="bg-green-600 px-4 py-2 rounded-lg text-white text-sm">Order</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 10 -->
+        <article class="bg-white rounded-2xl shadow card-hover overflow-hidden">
+          <div class="h-44">
+            <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=2b5c3d1f4e6a7b8c9d0e1f2a3b4c5d6e" alt="Mangalore Fish Pickle" class="w-full h-full object-cover">
+          </div>
+          <div class="p-4 text-center">
+            <h4 class="font-semibold text-lg text-[var(--chili)]">Mangalore Fish Pickle</h4>
+            <p class="text-sm text-gray-600 mt-1">Coastal coconut & spice</p>
+            <div class="mt-3">
+              <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Ammulu%20Pickles%21%20I%20want%20to%20order%20Mangalore%20Fish%20Pickle%20(300g)" target="_blank" class="bg-green-600 px-4 py-2 rounded-lg text-white text-sm">Order</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 11 -->
+        <article class="bg-white rounded-2xl shadow card-hover overflow-hidden">
+          <div class="h-44">
+            <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d" alt="Kodava Pork Pickle" class="w-full h-full object-cover">
+          </div>
+          <div class="p-4 text-center">
+            <h4 class="font-semibold text-lg text-[var(--chili)]">Kodava Pork Pickle (Karnataka)</h4>
+            <p class="text-sm text-gray-600 mt-1">Aromatic & peppery</p>
+            <div class="mt-3">
+              <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Ammulu%20Pickles%21%20I%20want%20to%20order%20Kodava%20Pork%20Pickle%20(300g)" target="_blank" class="bg-green-600 px-4 py-2 rounded-lg text-white text-sm">Order</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 12 -->
+        <article class="bg-white rounded-2xl shadow card-hover overflow-hidden">
+          <div class="h-44">
+            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=9b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e" alt="Kundapura Chicken Pickle" class="w-full h-full object-cover">
+          </div>
+          <div class="p-4 text-center">
+            <h4 class="font-semibold text-lg text-[var(--chili)]">Kundapura Chicken Pickle</h4>
+            <p class="text-sm text-gray-600 mt-1">Coastal Karnataka twist</p>
+            <div class="mt-3">
+              <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Ammulu%20Pickles%21%20I%20want%20to%20order%20Kundapura%20Chicken%20Pickle%20(300g)" target="_blank" class="bg-green-600 px-4 py-2 rounded-lg text-white text-sm">Order</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 13 -->
+        <article class="bg-white rounded-2xl shadow card-hover overflow-hidden">
+          <div class="h-44">
+            <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=1d2c3b4a5e6f7a8b9c0d1e2f3a4b5c6d" alt="Coastal Prawn Pickle" class="w-full h-full object-cover">
+          </div>
+          <div class="p-4 text-center">
+            <h4 class="font-semibold text-lg text-[var(--chili)]">Coastal Prawn Pickle (Kerala Style)</h4>
+            <p class="text-sm text-gray-600 mt-1">Coconut & tamarind notes</p>
+            <div class="mt-3">
+              <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Ammulu%20Pickles%21%20I%20want%20to%20order%20Coastal%20Prawn%20Pickle%20(300g)" target="_blank" class="bg-green-600 px-4 py-2 rounded-lg text-white text-sm">Order</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 14 -->
+        <article class="bg-white rounded-2xl shadow card-hover overflow-hidden">
+          <div class="h-44">
+            <img src="https://images.unsplash.com/photo-1587427012153-2b2f9b2f8f22?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=2e3f4d5c6b7a8e9f0a1b2c3d4e5f6a7b" alt="Koli Pickle" class="w-full h-full object-cover">
+          </div>
+          <div class="p-4 text-center">
+            <h4 class="font-semibold text-lg text-[var(--chili)]">Koli (Chicken) Pickle</h4>
+            <p class="text-sm text-gray-600 mt-1">Home-style village flavour</p>
+            <div class="mt-3">
+              <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Ammulu%20Pickles%21%20I%20want%20to%20order%20Koli%20Pickle%20(300g)" target="_blank" class="bg-green-600 px-4 py-2 rounded-lg text-white text-sm">Order</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 15 -->
+        <article class="bg-white rounded-2xl shadow card-hover overflow-hidden">
+          <div class="h-44">
+            <img src="https://images.unsplash.com/photo-1499028344343-cd173ffc68a9?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f" alt="Kerala Meen Achar" class="w-full h-full object-cover">
+          </div>
+          <div class="p-4 text-center">
+            <h4 class="font-semibold text-lg text-[var(--chili)]">Kerala Meen Achar (Fish)</h4>
+            <p class="text-sm text-gray-600 mt-1">Tamarind & coconut aroma</p>
+            <div class="mt-3">
+              <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Ammulu%20Pickles%21%20I%20want%20to%20order%20Kerala%20Meen%20Achar%20(300g)" target="_blank" class="bg-green-600 px-4 py-2 rounded-lg text-white text-sm">Order</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 16 -->
+        <article class="bg-white rounded-2xl shadow card-hover overflow-hidden">
+          <div class="h-44">
+            <img src="https://images.unsplash.com/photo-1525755662778-989d0524087e?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=4f5d6e7a8b9c0d1e2f3a4b5c6d7e8f9a" alt="Chemmeen (Prawn) Pickle" class="w-full h-full object-cover">
+          </div>
+          <div class="p-4 text-center">
+            <h4 class="font-semibold text-lg text-[var(--chili)]">Chemmeen Pickle (Prawn)</h4>
+            <p class="text-sm text-gray-600 mt-1">Kerala coastal classic</p>
+            <div class="mt-3">
+              <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Ammulu%20Pickles%21%20I%20want%20to%20order%20Chemmeen%20Pickle%20(300g)" target="_blank" class="bg-green-600 px-4 py-2 rounded-lg text-white text-sm">Order</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 17 -->
+        <article class="bg-white rounded-2xl shadow card-hover overflow-hidden">
+          <div class="h-44">
+            <img src="https://images.unsplash.com/photo-1543352634-68fdc2f6f3d1?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d" alt="Beef Pickle Kerala" class="w-full h-full object-cover">
+          </div>
+          <div class="p-4 text-center">
+            <h4 class="font-semibold text-lg text-[var(--chili)]">Beef Pickle (Kerala Style)</h4>
+            <p class="text-sm text-gray-600 mt-1">Rich & spicy</p>
+            <div class="mt-3">
+              <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Ammulu%20Pickles%21%20I%20want%20to%20order%20Beef%20Pickle%20(300g)" target="_blank" class="bg-green-600 px-4 py-2 rounded-lg text-white text-sm">Order</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 18 -->
+        <article class="bg-white rounded-2xl shadow card-hover overflow-hidden">
+          <div class="h-44">
+            <img src="https://images.unsplash.com/photo-1528449031896-1d9f6c0eaee8?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d" alt="Karimeen (Pearl Spot) Pickle" class="w-full h-full object-cover">
+          </div>
+          <div class="p-4 text-center">
+            <h4 class="font-semibold text-lg text-[var(--chili)]">Karimeen Pickle (Pearl Spot)</h4>
+            <p class="text-sm text-gray-600 mt-1">Mild & fragrant</p>
+            <div class="mt-3">
+              <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Ammulu%20Pickles%21%20I%20want%20to%20order%20Karimeen%20Pickle%20(300g)" target="_blank" class="bg-green-600 px-4 py-2 rounded-lg text-white text-sm">Order</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 19 -->
+        <article class="bg-white rounded-2xl shadow card-hover overflow-hidden">
+          <div class="h-44">
+            <img src="https://images.unsplash.com/photo-1512058564366-c9e5e7b00f5f?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=9e0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c" alt="Boneless Chicken Pickle" class="w-full h-full object-cover">
+          </div>
+          <div class="p-4 text-center">
+            <h4 class="font-semibold text-lg text-[var(--chili)]">Boneless Chicken Pickle</h4>
+            <p class="text-sm text-gray-600 mt-1">Quick-cook friendly</p>
+            <div class="mt-3">
+              <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Ammulu%20Pickles%21%20I%20want%20to%20order%20Boneless%20Chicken%20Pickle%20(300g)" target="_blank" class="bg-green-600 px-4 py-2 rounded-lg text-white text-sm">Order</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 20 -->
+        <article class="bg-white rounded-2xl shadow card-hover overflow-hidden">
+          <div class="h-44">
+            <img src="https://images.unsplash.com/photo-1543353071-087092ec3935?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=4c5b6a7d8e9f0a1b2c3d4e5f6a7b8c9d" alt="Special Andhra Mix" class="w-full h-full object-cover">
+          </div>
+          <div class="p-4 text-center">
+            <h4 class="font-semibold text-lg text-[var(--chili)]">Andhra Special Mix Pickle</h4>
+            <p class="text-sm text-gray-600 mt-1">Mixed seafood & spices</p>
+            <div class="mt-3">
+              <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Ammulu%20Pickles%21%20I%20want%20to%20order%20Andhra%20Special%20Mix%20Pickle%20(300g)" target="_blank" class="bg-green-600 px-4 py-2 rounded-lg text-white text-sm">Order</a>
+            </div>
+          </div>
+        </article>
+
+      </div> <!-- grid end -->
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="py-12">
+    <div class="max-w-6xl mx-auto px-4">
+      <h3 class="text-2xl font-semibold text-[var(--chili)] mb-6">Gallery</h3>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=9b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e" class="rounded-lg object-cover h-40 w-full" />
+        <img src="https://images.unsplash.com/photo-1525755662778-989d0524087e?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=4f5d6e7a8b9c0d1e2f3a4b5c6d7e8f9a" class="rounded-lg object-cover h-40 w-full" />
+        <img src="https://images.unsplash.com/photo-1543353071-087092ec3935?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=4c5b6a7d8e9f0a1b2c3d4e5f6a7b8c9d" class="rounded-lg object-cover h-40 w-full" />
+        <img src="https://images.unsplash.com/photo-1604908177522-0bf2a4b6bbf8?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=3bf9b66a7b8c7abf1b2f0d1c2b6f3d72" class="rounded-lg object-cover h-40 w-full" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT & CONTACT -->
+  <section id="about" class="py-12 bg-white">
+    <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div>
+        <h3 class="text-2xl font-semibold text-[var(--chili)]">About Ammulu Pickles</h3>
+        <p class="mt-4 text-gray-700">Ammulu Pickles started with a love for coastal flavours and family recipes. We prepare small batches, use fresh ingredients, and pack each jar with care. All pickles are labeled clearly with ingredients and allergen info.</p>
+      </div>
+
+      <div id="contact">
+        <h4 class="text-lg font-semibold text-[var(--chili)]">Contact & Orders</h4>
+        <p class="mt-3 text-gray-700">Place orders via WhatsApp. Click the green WhatsApp button on the right or the genie below for a fun order experience!</p>
+        <div class="mt-4">
+          <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="inline-flex items-center gap-2 bg-green-600 px-4 py-2 rounded-lg text-white">
+            Message on WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[var(--chili)] text-white py-6 mt-8">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <div class="font-semibold">© <span id="year"></span> Ammulu Pickles — Homemade & Fresh</div>
+      <div class="text-sm mt-1 opacity-80">Please check product ingredients for allergens. Non-veg labeling is present on each product.</div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP BUTTON (right) -->
+  <a id="waFloat" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Ammulu%20Pickles%21%20I%20would%20like%20to%20place%20an%20order." target="_blank"
+     class="fixed right-6 bottom-6 z-50 bg-green-500 p-3 rounded-full shadow-xl hover:scale-105 transition transform">
+    <!-- WhatsApp icon (SVG) -->
+    <svg viewBox="0 0 24 24" width="34" height="34" fill="white">
+      <path d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.373 0 .002 5.373 0 12c0 2.115.55 4.162 1.596 5.97L0 24l6.262-1.628A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12 0-3.214-1.251-6.257-3.48-8.52zM12 21.5c-1.77 0-3.5-.48-4.98-1.38L5 20l.9-2.04C4.77 16.64 4 14.39 4 12 4 7.03 7.98 3 12 3s8 4.03 8 9-3.98 9-8 9z"/>
+      <path d="M17.2 14.2c-.3-.15-1.78-.88-2.06-.98-.28-.1-.48-.15-.68.15-.2.3-.78.98-.95 1.18-.17.2-.34.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.78-1.48-1.77-1.65-2.07-.17-.31-.02-.48.13-.63.13-.13.3-.34.45-.51.15-.17.2-.3.3-.5.1-.2 0-.37-.05-.52-.05-.15-.68-1.64-.93-2.25-.24-.59-.49-.51-.68-.52-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.8.37-.28.3-1.07 1.05-1.07 2.57 0 1.52 1.09 2.99 1.24 3.2.15.2 2.15 3.3 5.2 4.62 3.05 1.32 3.05.88 3.6.83.55-.05 1.78-.72 2.03-1.42.25-.7.25-1.3.17-1.42-.08-.12-.28-.2-.58-.35z"/>
+    </svg>
+  </a>
+
+  <!-- GENIE CTA (just above WhatsApp) -->
+  <div id="genieRoot" class="fixed right-6 bottom-24 z-50 flex items-center gap-3">
+    <div id="genieBtn" class="genie-btn" title="Click to order — Genie loves tasty pickles!">
+      <!-- simple stylized genie SVG with drool -->
+      <svg width="44" height="44" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#7dd3fc"/><stop offset="1" stop-color="#60a5fa"/></linearGradient>
+        </defs>
+        <!-- head -->
+        <circle cx="32" cy="22" r="14" fill="url(#g1)"/>
+        <!-- eyes -->
+        <circle cx="26" cy="20" r="2.2" fill="#1f2937"/>
+        <circle cx="38" cy="20" r="2.2" fill="#1f2937"/>
+        <!-- smiling mouth -->
+        <path d="M24 28 Q32 34 40 28" stroke="#111827" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <!-- drool (animated group) -->
+        <g class="drool" transform="translate(36,30)">
+          <path d="M0 0 q4 6 2 10 q-2 4 -6 4 q-2 0 -4 -2 q-2 -2 -1 -6 q1 -4 7 -6z" fill="#9be7ff" opacity="0.95"/>
+        </g>
+        <!-- body curl -->
+        <path d="M32 36 C32 48 14 48 16 60 L32 60" fill="#60a5fa" opacity="0.9"/>
+      </svg>
+    </div>
+
+    <div class="bg-white p-3 rounded-xl shadow-md flex flex-col">
+      <div class="text-sm font-semibold text-[var(--chili)] sparkle">Click here ✨</div>
+      <div class="text-xs text-gray-500">Genie loves tasty pickles 😋</div>
+    </div>
+  </div>
+
+  <script>
+    // set year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // genie click -> open WhatsApp with a playful prefilled message
+    document.getElementById('genieBtn').addEventListener('click', function(){
+      const phone = '91XXXXXXXXXX'; // replace with your number
+      const msg = encodeURIComponent("Hi Ammulu Pickles! The genie told me about your pickles — I want to order. Please share options & price. 😊");
+      const url = `https://wa.me/${phone}?text=${msg}`;
+      window.open(url, '_blank');
+    });
+
+    // (Optional) keyboard accessibility: press 'g' to trigger genie
+    document.addEventListener('keydown', (e) => {
+      if (e.key.toLowerCase() === 'g') {
+        document.getElementById('genieBtn').click();
+      }
+    });
+  </script>
+
+</body>
+</html>
